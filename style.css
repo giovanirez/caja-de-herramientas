@@ -704,7 +704,126 @@
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
+        /* --- NUEVA SECCIÓN: PROBLEMA VS SOLUCIÓN --- */
 
+.comparison-section {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.comparison-card {
+    padding: 40px 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+}
+
+.comparison-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    display: flex; /* Alinea icono y texto */
+    align-items: flex-start; /* Alinea arriba por si el texto ocupa 2 líneas */
+    gap: 12px; /* Espacio entre icono y texto */
+}
+
+.comparison-card h3 i {
+    font-size: 1.6rem; /* Icono ligeramente más grande que el texto */
+    margin-top: 3px; /* Ajuste fino vertical */
+    flex-shrink: 0; /* Evita que el icono se aplaste */
+}
+
+.comparison-card p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.comparison-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos Específicos para el Card de Problema */
+.problem-card {
+    background-color: #fff;
+    border: 2px solid #f0f0f0;
+    border-left: 6px solid #e74c3c;
+}
+
+.problem-card h3 {
+    color: #c0392b;
+}
+
+.problem-card h3 i {
+    color: #e74c3c; /* Color rojo para el icono X */
+}
+
+.pain-point {
+    font-style: italic;
+    color: #555;
+    font-size: 1.1rem !important;
+}
+
+/* Estilos Específicos para el Card de Solución */
+.solution-card {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-left: 6px solid #2ecc71;
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.solution-card h3 {
+    color: #2ecc71;
+}
+
+.solution-card h3 i {
+    color: #2ecc71; /* Color verde para el icono Check */
+}
+
+.solution-highlight {
+    font-weight: 700;
+    color: var(--gold);
+    margin-top: 10px;
+    font-size: 1.1rem !important;
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .comparison-card {
+        padding: 30px 20px;
+    }
+}
         .cta-main:hover::before {
             width: 300px;
             height: 300px;
